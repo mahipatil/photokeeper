@@ -8,18 +8,17 @@ import {
 export interface PeriodicElement {
   name: string;
   position: number;
-  emailid: string;
-  address: string;
+  uploadby: string;
   images:object;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
 
-  {position: 1, name: 'Mahesh', emailid: 'mahi.patil26@gmail.com', address: 'Pune', images:[ "100", "101", "102" ]},
-  {position: 2, name: 'Abc', emailid: 'abc@xyz.com', address: 'Mumbai',images:[ "103", "104", "1054" ]},
-  {position: 3, name: 'Qwer', emailid: 'qwer@yte.com', address: 'Karad',images:[ "106", "107", "108" ]},
-  {position: 4, name: 'MaheshP', emailid: 'mahesh.patil@gmail.com', address: 'Kolhapur',images:[ "109", "110", "111" ]},
-  {position: 5, name: 'MaheshG', emailid: 'mahesh@gmail.com', address: 'Satara',images:[ "112", "113", "114" ]},
+  {position: 1, name: 'Album1',  uploadby: 'Mahesh', images:[ "100", "101", "102" ]},
+  {position: 2, name: 'Album2',  uploadby: 'Mahesh',images:[ "103", "104", "1054" ]},
+  {position: 3, name: 'Album3',  uploadby: 'Mahesh',images:[ "106", "107", "108" ]},
+  {position: 4, name: 'Album4',  uploadby: 'Mahesh',images:[ "109", "110", "111" ]},
+  {position: 5, name: 'Album5',  uploadby: 'Mahesh',images:[ "112", "113", "114" ]},
 
 ];
 
@@ -47,8 +46,9 @@ verticalPosition: MatSnackBarVerticalPosition = 'bottom';
   }
 
 
-  displayedColumns: string[] = ['checkbox','position', 'name', 'emailid', 'address'];
+  displayedColumns: string[] = ['checkbox', 'name',  'uploadby'];
   dataSource = ELEMENT_DATA;
+  //Data Will change by Username pass to api which get by sessionStorage.getItem('username')
 
 
   onShowPhotoClick(data){
